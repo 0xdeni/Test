@@ -1,3 +1,4 @@
+
 import React, { useState, useRef, useEffect } from 'react';
 import { Icon } from "@iconify/react";
 import { GoogleGenAI } from "@google/genai";
@@ -42,17 +43,21 @@ export function AISearch({ onNavigate }: AISearchProps) {
     setLoading(true);
 
     try {
+      // Correct initialization with named parameter for apiKey
       const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+      // Use gemini-3-flash-preview for basic search and Q&A tasks
       const response = await ai.models.generateContent({
-        model: 'gemini-2.5-flash',
+        model: 'gemini-3-flash-preview',
         contents: userMsg,
         config: {
           tools: [{ googleSearch: {} }],
         }
       });
 
+      // Extract text directly from the response property
       const text = response.text || "I couldn't find an answer for that.";
       
+      // Extract grounding sources for display as required by guidelines
       const chunks = response.candidates?.[0]?.groundingMetadata?.groundingChunks;
       const sources: Source[] = chunks
         ?.map((c: any) => c.web)

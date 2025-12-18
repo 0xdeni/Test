@@ -4,6 +4,8 @@ import { Deposit } from './components/Deposit';
 import { Withdrawal } from './components/Withdrawal';
 import { AISearch } from './components/AISearch';
 import { AppSettings } from './components/AppSettings';
+import { Activity } from './components/Activity';
+import { AssetDetail } from './components/AssetDetail';
 
 export default function App() {
   const [view, setView] = useState('portfolio');
@@ -31,6 +33,10 @@ export default function App() {
         <Withdrawal onNavigate={setView} />
       ) : view === 'ai-search' ? (
         <AISearch onNavigate={setView} />
+      ) : view === 'activity' ? (
+        <Activity onNavigate={setView} />
+      ) : view === 'asset-detail' ? (
+        <AssetDetail onNavigate={setView} />
       ) : (
         <AppSettings onNavigate={setView} isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
       )}

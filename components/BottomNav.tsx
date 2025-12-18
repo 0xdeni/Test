@@ -15,10 +15,10 @@ export function BottomNav({ currentView, onNavigate }: BottomNavProps) {
       activeIcon: 'solar:home-smile-bold-duotone' 
     },
     { 
-      id: 'deposit', 
-      label: 'Deposit', 
-      icon: 'solar:wallet-money-linear', 
-      activeIcon: 'solar:wallet-money-bold-duotone' 
+      id: 'activity', 
+      label: 'Activity', 
+      icon: 'solar:history-linear', 
+      activeIcon: 'solar:history-bold-duotone' 
     },
     { 
       id: 'ai-search', 
@@ -28,10 +28,10 @@ export function BottomNav({ currentView, onNavigate }: BottomNavProps) {
       isSpecial: true
     },
     { 
-      id: 'withdrawal', 
-      label: 'Withdraw', 
-      icon: 'solar:card-transfer-linear', 
-      activeIcon: 'solar:card-transfer-bold-duotone' 
+      id: 'deposit', 
+      label: 'Deposit', 
+      icon: 'solar:wallet-money-linear', 
+      activeIcon: 'solar:wallet-money-bold-duotone' 
     },
     { 
       id: 'settings', 
